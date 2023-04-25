@@ -14,4 +14,4 @@ struct terrestrial class_terrestrial(int number_of_wheels)
         class.number_of_wheels = number_of_wheels;
         class.get_number_of_wheels = get_number_of_wheels;
         return class;
-};
+}

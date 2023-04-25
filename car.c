@@ -13,7 +13,7 @@ struct car class_car(void)
         class.base = class_terrestrial(4);
         class.get_common_name = get_common_name;
         return class;
-};
+}
 
 car construct_car(struct car *class, char *particular_name)
 {
