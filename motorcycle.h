@@ -23,6 +23,6 @@ struct motorcycle {
 };
 
 struct motorcycle class_motorcycle(void);
-motorcycle construct_motorcycle(struct motorcycle *class, char *particular_name);
+motorcycle construct_motorcycle(char *particular_name);
 
 #endif

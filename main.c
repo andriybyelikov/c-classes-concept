@@ -4,20 +4,14 @@
 
 int main(void)
 {
-        struct car class_car_instance = class_car();
-        struct motorcycle class_motorcycle_instance = class_motorcycle();
-
-        car polito = construct_car(&class_car_instance,
-                "Polito");
-        motorcycle verde = construct_motorcycle(&class_motorcycle_instance,
-                "Verde");
-        motorcycle rojo = construct_motorcycle(&class_motorcycle_instance,
-                "Rojo");
+        auto polito = construct_car("Polito");
+        auto verde = construct_motorcycle("Verde");
+        auto rojo = construct_motorcycle("Rojo");
 
         terrestrial *vehicles[] = {
                 (terrestrial *)&polito,
                 (terrestrial *)&verde,
-                (terrestrial *)&rojo
+                (terrestrial *)&rojo,
         };
 
         for (int i = 0; i < sizeof(vehicles) / sizeof(struct vehicle *); i++) {

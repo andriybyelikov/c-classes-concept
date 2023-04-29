@@ -13,6 +13,6 @@ struct vehicle {
         char *(*get_particular_name)(vehicle *this);
 };
 
-struct vehicle class_vehicle(void);
+extern const struct vehicle class_vehicle;
 
 #endif

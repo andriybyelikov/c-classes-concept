@@ -24,6 +24,6 @@ struct car {
 };
 
 struct car class_car(void);
-car construct_car(struct car *class, char *particular_name);
+car construct_car(char *particular_name);
 
 #endif

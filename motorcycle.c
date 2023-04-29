@@ -1,5 +1,4 @@
 #include "motorcycle.h"
-#include <stddef.h>
 
 static
 char *get_common_name(motorcycle *this)
@@ -15,10 +14,15 @@ struct motorcycle class_motorcycle(void)
         return class;
 }
 
-motorcycle construct_motorcycle(struct motorcycle *class, char *particular_name)
+motorcycle construct_motorcycle(char *particular_name)
 {
         motorcycle c;
-        c.class = class;
+
+        // probably can't optimize this further
+        // until C adopts constexpr functions
+        c.class = &(static struct motorcycle){};
+        *(c.class) = class_motorcycle();
+
         c.particular_name = particular_name;
         return c;
 }

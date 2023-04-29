@@ -1,5 +1,4 @@
 #include "car.h"
-#include <stddef.h>
 
 static
 char *get_common_name(car *this)
@@ -15,10 +14,15 @@ struct car class_car(void)
         return class;
 }
 
-car construct_car(struct car *class, char *particular_name)
+car construct_car(char *particular_name)
 {
         car c;
-        c.class = class;
+
+        // probably can't optimize this further
+        // until C adopts constexpr functions
+        c.class = &(static struct car){};
+        *(c.class) = class_car();
+
         c.particular_name = particular_name;
         return c;
 }
